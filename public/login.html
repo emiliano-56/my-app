@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D coding Expert-Static Site Generator.</title>
+    <!-- <link href="../logo.png" rel="icon"> -->
+    <meta name="author" content="DcodingExpert.com" />
+    <link rel="shortcut icon" href="../img/logo.png" />
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="Statict, generator, Static Site, Static Site Generator" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+          #viewButton, #publishBtn, #downloadButton, #logoutBtn{
+            background-color: #ffc107 !important;
+            color: #303030;
+        }
+
+       #generate, #sign-in{
+        background-color: #00cdfc !important;
+       }
+       footer, nav{
+    background-color: #00cdfc  !important;
+}
+
+
+    </style>
+</head>
+<body>
+
+           <!-- Top Navbar -->
+           <nav class="w-full bg-gray-800 text-white py-4">
+            <div class="container mx-auto flex justify-center">
+                <span class="text-xl font-bold">Welcome to DCoding Expert Static Site Generator</span>
+            </div>
+        </nav>
+<br><br>
+
+
+
+
+
+<div class="flex flex-col items-center justify-center min-h-screen">
+    
+    <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-md  ">
+        
+        <div id="loginForm" class="space-y-4">
+            <h2 class="text-2xl font-bold text-center">Login</h2>
+            <p class="text-sm tracking-wide text-gray-600 dark:text-gray-300">Use the official email and password to sign in </p>
+            <form id="loginForm" action="/login" method="POST" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
+                    <input type="password" id="password" name="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <button id="sign-in" type="submit" class="w-full py-2 px-4 bg-indigo-600 text-white font-medium rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Sign in</button>
+            </form>
+        </div>
+
+        <div id="generatorForm" class="space-y-4 hidden">
+            <h2 class="text-2xl font-bold text-center mb-4">Website Generator</h2>
+            <p class="text-sm tracking-wide text-gray-600 dark:text-gray-300">Please fill in the necessary details.  </p>
+            <form id="generateForm" class="space-y-4">
+                <div>
+                    <label for="businessName" class="block text-sm font-medium text-gray-700">Business Name:</label>
+                    <input type="text" id="businessName" name="businessName"  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="logoUrl" class="block text-sm font-medium text-gray-700">Logo URL:</label>
+                    <input type="url" id="logoUrl" name="logoUrl"  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="logoWidth" class="block text-sm font-medium text-gray-700">Logo Width:</label>
+                    <input type="number" id="logoWidth" name="logoWidth"  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <label for="contentText" class="block text-sm font-medium text-gray-700">Content Text:</label>
+                    <textarea id="contentText" name="contentText" rows="4"  class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                </div>
+                <div>
+                    <label for="template" class="block text-sm font-medium text-gray-700">Template:</label>
+                    <select id="template" name="template" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                        <option value="template1">Template 1</option>
+                        <option value="template2">Template 2</option>
+                        <option value="template3">Template 3</option>
+                        <option value="template4">Template 4</option>
+                        
+                        
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <button id="generate" type="submit" class="w-full py-2 px-4 bg-indigo-600 text-white font-medium rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Generate Website</button>
+            </form>
+        </div>
+
+        <div class="space-y-4">
+            <br>
+            <button id="publishBtn" class="w-full py-2 px-4 bg-green-600 text-white font-medium rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 hidden">Publish Website</button>
+            <button id="viewButton" class="w-full py-2 px-4 bg-blue-600 text-white font-medium rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 hidden">View Website</button>
+            <button id="downloadButton" class="w-full py-2 px-4 bg-yellow-600 text-white font-medium rounded-md shadow-sm hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 hidden">Download Website</button>
+            <button id="logoutBtn" class="w-full py-2 px-4 bg-red-600 text-white font-medium rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 hidden">Logout</button>
+        </div>
+    </div> 
+
+</div>
+
+
+
+<footer class="bg-gray-800 text-white p-4">
+    <div class="container mx-auto text-center">
+        <p>&copy; 
+            <script>document.write(new Date().getFullYear())</script>
+            DcodingExpert. All rights reserved.</p>
+        <!-- <p class="mt-2">Designed with <a href="https://tailwindcss.com/" class="underline hover:text-gray-300">Tailwind CSS</a></p> -->
+    </div>
+</footer>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const generatorForm = document.getElementById('generatorForm');
+            const generateForm = document.getElementById('generateForm');
+            const publishBtn = document.getElementById('publishBtn');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const viewButton = document.getElementById('viewButton');
+            const downloadButton = document.getElementById('downloadButton');
+
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                try {
+                    const response = await fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ email, password })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        loginForm.style.display = 'none';
+                        generatorForm.style.display = 'block';
+                        logoutBtn.style.display = 'block';
+                    } else {
+                        alert('Login failed. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error logging in. Please try again.');
+                }
+            });
+
+            generateForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const businessName = document.getElementById('businessName').value;
+                const logoUrl = document.getElementById('logoUrl').value;
+                const logoWidth = document.getElementById('logoWidth').value;
+                const contentText = document.getElementById('contentText').value;
+                const template = document.getElementById('template').value;
+
+                try {
+                    const response = await fetch('/generate', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ businessName, logoUrl, logoWidth, contentText, template })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        alert('Website generated successfully!');
+                        publishBtn.style.display = 'block';
+                        viewButton.style.display = 'block';
+                        downloadButton.style.display = 'block';
+                    } else {
+                        alert('Failed to generate website. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error generating website. Please try again.');
+                }
+            });
+
+            publishBtn.addEventListener('click', async () => {
+                try {
+                    const response = await fetch('/publish', {
+                        method: 'POST'
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        alert('Website published successfully! Visit: ' + data.url);
+                    } else {
+                        alert('Failed to publish website. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error publishing website. Please try again.');
+                }
+            });
+
+            viewButton.addEventListener('click', () => {
+                window.open(`/website/index.html`, '_blank');
+            });
+
+            downloadButton.addEventListener('click', async () => {
+                try {
+                    const response = await fetch('/download-zip', {
+                        method: 'GET'
+                    });
+
+                    if (response.ok) {
+                        const blob = await response.blob();
+                        const url = window.URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = url;
+                        a.download = 'website.zip';
+                        document.body.appendChild(a);
+                        a.click();
+                        window.URL.revokeObjectURL(url);
+                        alert('Website downloaded successfully!');
+                    } else {
+                        alert('Failed to download website. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error downloading website. Please try again.');
+                }
+            });
+
+            logoutBtn.addEventListener('click', async () => {
+                try {
+                    const response = await fetch('/logout', {
+                        method: 'POST'
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        alert(data.message);
+                        loginForm.style.display = 'block';
+                        generatorForm.style.display = 'none';
+                        publishBtn.style.display = 'none';
+                        viewButton.style.display = 'none';
+                        downloadButton.style.display = 'none';
+                        logoutBtn.style.display = 'none';
+                    } else {
+                        alert('Failed to logout. Please try again.');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error logging out. Please try again.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
