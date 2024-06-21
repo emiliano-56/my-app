@@ -52,60 +52,6 @@ app.post('/login', (req, res) => {
     }
 });
 
-// app.post('/generate', ensureAuthenticated, (req, res) => {
-//     const { businessName, logoUrl, logoWidth, contentText, template } = req.body;
-
-//     const templateDir = path.join(__dirname, `templates/${template}`);
-//     const templatePath = path.join(templateDir, `${template}.html`); // Assuming template name matches the HTML file name
-
-//     fs.readFile(templatePath, 'utf8', (err, templateContent) => {
-//         if (err) {
-//             console.error('Error reading template file:', err);
-//             res.status(500).json({ error: 'Internal Server Error' });
-//             return;
-//         }
-
-//         const compiledTemplate = Handlebars.compile(templateContent);
-//         const renderedHtml = compiledTemplate({
-//             business_name: businessName,
-//             logo_url: logoUrl,
-//             logo_width: logoWidth,
-//             content_text: contentText
-//         });
-
-//         const outputDir = path.join(__dirname, 'website');
-//         const assetsDir = path.join(outputDir, 'assets');
-//         const cssDir = path.join(assetsDir, 'css');
-//         const jsDir = path.join(assetsDir, 'js');
-//         const imgDir = path.join(assetsDir, 'images');
-
-//         if (!fs.existsSync(outputDir)) {
-//             fs.mkdirSync(outputDir);
-//         }
-
-//         // Copy template assets
-//         fse.copySync(path.join(templateDir, 'css'), cssDir);
-//         fse.copySync(path.join(templateDir, 'js'), jsDir);
-//         fse.copySync(path.join(templateDir, 'images'), imgDir);
-
-//         // Write the HTML file
-//         const outputPath = path.join(outputDir, 'index.html');
-//         fs.writeFile(outputPath, renderedHtml, (err) => {
-//             if (err) {
-//                 console.error('Error writing generated website file:', err);
-//                 res.status(500).json({ error: 'Internal Server Error' });
-//                 return;
-//             }
-
-//             console.log('Website generated successfully!');
-//             res.json({
-//                 url: '/website/index.html',
-//                 viewUrl: `http://localhost:${PORT}/website/index.html`,
-//                 downloadUrl: '/download-zip'
-//             });
-//         });
-//     });
-// });
 
 
 app.post('/generate', ensureAuthenticated, (req, res) => {

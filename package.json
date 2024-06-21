@@ -1,9 +1,10 @@
 {
   "name": "dddd",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "generate_website.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node generate_website.js",
+    "vercel-build": "node generate_website.js"
   },
   "keywords": [],
   "author": "",
