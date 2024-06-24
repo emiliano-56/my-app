@@ -10,7 +10,7 @@ const session = require('express-session');
 const fse = require('fs-extra'); // for copying directories
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 const NETLIFY_ACCESS_TOKEN = 'nfp_x5exD9HnrfDrh52m6THBDYhjhnAvTpJR9d55';
 const NETLIFY_SITE_NAME = 'd8d3d7b0-3bf2-4ec4-88cf-39c4da226824';
@@ -88,8 +88,8 @@ app.post('/generate', ensureAuthenticated, (req, res) => {
 
         // Additional folders to copy
         fse.copySync(path.join(templateDir, 'fonts'), path.join(outputDir, 'fonts'));
-        fse.copySync(path.join(templateDir, 'scss'), path.join(outputDir, 'scss'));
-        fse.copySync(path.join(templateDir, 'libs'), path.join(outputDir, 'libs'));
+        // fse.copySync(path.join(templateDir, 'scss'), path.join(outputDir, 'scss'));
+        // fse.copySync(path.join(templateDir, 'libs'), path.join(outputDir, 'libs'));
         // Write the HTML file
         const outputPath = path.join(outputDir, 'index.html');
         fs.writeFile(outputPath, renderedHtml, (err) => {
