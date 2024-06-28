@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>{{business_name}} - Your health Caring Center</title>
+     <meta charset="UTF-8">
+     <link rel="icon" href="{{logo_url}}">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="css/bootstrap.min.css">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
+     <link rel="stylesheet" href="css/animate.css">
+     <link rel="stylesheet" href="css/owl.carousel.css">
+     <link rel="stylesheet" href="css/owl.theme.default.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="css/tooplate-style.css">
+<style>
+.service-card {
+     background: #fff;
+     border: 1px solid #ddd;
+     border-radius: 10px;
+     text-align: center;
+     padding: 30px 20px;
+     margin-bottom: 30px;
+     transition: transform 0.3s;
+}
+
+.service-card:hover {
+     transform: translateY(-10px);
+}
+
+.service-icon {
+     font-size: 50px;
+     color: #3498db;
+     margin-bottom: 20px;
+}
+
+.service-info h3 {
+     font-size: 22px;
+     margin-bottom: 15px;
+}
+
+.service-info p {
+     font-size: 16px;
+     color: #666;
+}
+
+/* 
+#about {
+     padding: 100px 0;
+} */
+
+#about {
+     padding: 100px 0;
+}
+
+/* .about-info {
+     padding: 30px;
+     background: #fff;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     margin-bottom: 30px;
+     position: relative;
+     z-index: 1;
+} */
+
+/* .about-image img {
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+} */
+
+.about-image-higher {
+     margin-top: -100px; /* Adjust this value as needed */
+}
+
+/* .profile {
+     margin-top: 20px;
+     text-align: left;
+     position: absolute;
+     bottom: 30px;
+     left: 30px;
+     width: 100px;
+} */
+
+/* .profile img {
+     border-radius: 50%;
+     width: 100px;
+     height: 100px;
+     object-fit: cover;
+} */
+
+/* .profile figcaption {
+     margin-top: 10px;
+     text-align: center;
+}
+
+.profile h3 {
+     font-size: 14px;
+     margin: 0;
+     color: #333;
+}
+
+.profile p {
+     font-size: 12px;
+     color: #666;
+     margin: 0;
+} */
+
+@media( max-width: 768px){
+ 
+     #welcome #image-hide{
+          display: none;
+     }
+}
+
+
+</style>
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+               
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>Welcome to {{business_name}} Hospital</p>
+                    </div>
+                         
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> 07016943939</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 6:00 AM - 10:00 PM (Mon-Sat)</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="mailto:dlucky171@gmail.com">support@gmail.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <!-- <a href="index.html" class="navbar-brand"><i class="fa fa-h-square"></i>{{business_name}}</a> -->
+                     <img src="{{logo_url}}" width="{{logo_width}}" height="24" alt="">
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#top" class="smoothScroll">Home</a></li>
+                         <li><a href="#about" class="smoothScroll">About Us</a></li>
+                         <li><a href="#team" class="smoothScroll">Doctors</a></li>
+                         <li><a href="#news" class="smoothScroll">service</a></li>
+                         <li><a href="#google-map" class="smoothScroll">Contact</a></li>
+                         <li class="appointment-btn"><a href="#appointment">Make an appointment</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- HOME -->
+     <section id="home" class="slider" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                         <div class="owl-carousel owl-theme">
+                              <div class="item item-first">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>Let's make your life happier</h3>
+                                             <h1>Healthy Living</h1>
+                                             <a href="#team" class="section-btn btn btn-default smoothScroll">Meet Our Doctors</a>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="item item-second">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>Aenean luctus lobortis tellus</h3>
+                                             <h1>New Lifestyle</h1>
+                                             <a href="#about" class="section-btn btn btn-default btn-gray smoothScroll">More About Us</a>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <div class="item item-third">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>Pellentesque nec libero nisi</h3>
+                                             <h1>Your Health Benefits</h1>
+                                             <a href="#news" class="section-btn btn btn-default btn-blue smoothScroll">Read Stories</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+               </div>
+          </div>
+     </section>
+
+
+
+<!-- ABOUT -->
+<section id="about">
+     <div class="container">
+          <div class="row">
+               <div class="col-md-6 col-sm-6">
+                    <div class="about-info">
+                         <h2 class="wow fadeInUp" data-wow-delay="0.6s">Welcome to {{business_name}} Hospitals</h2>
+                         <div class="wow fadeInUp" data-wow-delay="0.8s">
+                              <p>
+                                   Dedicated to providing compassionate and high-quality healthcare. 
+                                   Our mission is to offer excellent medical services with a focus on patient-centered care. 
+                                   Located in the heart of Surulere, 
+                              </p>
+                              <p>
+                                   we strive to improve the health and lives of our community through integrity, collaboration, and innovation.
+                              </p>
+                         </div>
+                         <figure class="profile wow fadeInUp" data-wow-delay="1s">
+                              <img src="./images/author-image.jpg" class="img-responsive" alt="">
+                              <figcaption>
+                                   <h3>Dr. Nanci0</h3>
+                                   <p>MD/C.E.O</p>
+                              </figcaption>
+                         </figure>
+                    </div>
+               </div>
+
+               <div class="col-md-6 col-sm-6">
+                    <!-- ABOUT IMAGE -->
+                    <div class="about-image wow fadeInUp about-image-higher"  id="welcome" data-wow-delay="0.4s">
+                         <img src="./images/Untitled design.png" id="image-hide" class="img-responsive" alt="About Saint Charles Hospital">
+                    </div>
+               </div>
+          </div>
+     </div>
+</section>
+
+
+
+
+
+
+     <!-- TEAM -->
+     <section id="team" data-stellar-background-ratio="1">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.1s">Our Doctors</h2>
+                         </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <img src="images/black 1.jpg" class="img-responsive" alt="">
+
+                                   <div class="team-info">
+                                        <h3>Nate Baston</h3>
+                                        <p>General Principal</p>
+                                        <div class="team-contact-info">
+                                             <p><i class="fa fa-phone"></i> 07016943939</p>
+                                             <p><i class="fa fa-envelope-o"></i> <a href="mailto:saintcharleshospital@yahoo.com">support@gmail.com</a></p>
+                                        </div>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-linkedin-square"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                        </ul>
+                                   </div>
+
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                              <img src="images/black2.avif" class="img-responsive" alt="">
+
+                                   <div class="team-info">
+                                        <h3>Jason Stewart</h3>
+                                        <p>Pregnancy</p>
+                                        <div class="team-contact-info">
+                                             <p><i class="fa fa-phone"></i> 07016943939</p>
+                                             <p><i class="fa fa-envelope-o"></i> <a href="mailto:dlucky171@gmail.com">support@gmail.com</a></p>
+                                        </div>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                             <li><a href="#" class="fa fa-flickr"></a></li>
+                                        </ul>
+                                   </div>
+
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
+                              <img src="images/b4.jpg" class="img-responsive" alt="">
+
+                                   <div class="team-info">
+                                        <h3>Miasha John</h3>
+                                        <p>Cardiology</p>
+                                        <div class="team-contact-info">
+                                             <p><i class="fa fa-phone"></i> 07016943939</p>
+                                             <p><i class="fa fa-envelope-o"></i> <a href="mailto:dlucky171@gmail.com">support@gmail.com</a></p>
+                                        </div>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-twitter"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                        </ul>
+                                   </div>
+
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+
+<!-- SERVICES -->
+<section id="news" data-stellar-background-ratio="2.5">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-12 col-sm-12">
+                    <!-- SECTION TITLE -->
+                    <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                         <h2>Our Services</h2>
+                    </div>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                    <!-- SERVICE CARD -->
+                    <div class="service-card wow fadeInUp" data-wow-delay="0.4s">
+                         <div class="service-icon">
+                              <i class="fa fa-user-md"></i>
+                         </div>
+                         <div class="service-info">
+                              <h3>General Medical Practice</h3>
+                              <p>Comprehensive healthcare services for all ages and medical needs.</p>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                    <!-- SERVICE CARD -->
+                    <div class="service-card wow fadeInUp" data-wow-delay="0.6s">
+                         <div class="service-icon">
+                              <i class="fa fa-scalpel"></i>
+                         </div>
+                         <div class="service-info">
+                              <h3>Surgery</h3>
+                              <p>Advanced surgical procedures performed by our expert surgeons.</p>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                    <!-- SERVICE CARD -->
+                    <div class="service-card wow fadeInUp" data-wow-delay="0.8s">
+                         <div class="service-icon">
+                              <i class="fa fa-female"></i>
+                         </div>
+                         <div class="service-info">
+                              <h3>Obstetrics & Gynaecology</h3>
+                              <p>Comprehensive care for women's health, pregnancy, and childbirth.</p>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                    <!-- SERVICE CARD -->
+                    <div class="service-card wow fadeInUp" data-wow-delay="1.0s">
+                         <div class="service-icon">
+                              <i class="fa fa-heartbeat"></i>
+                         </div>
+                         <div class="service-info">
+                              <h3>ECG-Heart Check</h3>
+                              <p>Advanced heart check-ups and ECG services for cardiac health.</p>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                    <!-- SERVICE CARD -->
+                    <div class="service-card wow fadeInUp" data-wow-delay="1.2s">
+                         <div class="service-icon">
+                              <i class="fa fa-ultrasound"></i>
+                         </div>
+                         <div class="service-info">
+                              <h3>Ultrasound (Scan)</h3>
+                              <p>State-of-the-art ultrasound imaging for accurate diagnostics.</p>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="col-md-4 col-sm-6">
+                    <!-- SERVICE CARD -->
+                    <div class="service-card wow fadeInUp" data-wow-delay="1.4s">
+                         <div class="service-icon">
+                              <i class="fa fa-vial"></i>
+                         </div>
+                         <div class="service-info">
+                              <h3>Laboratory - Test Runnings</h3>
+                              <p>Comprehensive laboratory services for accurate test results.</p>
+                         </div>
+                    </div>
+               </div>
+
+          </div>
+     </div>
+</section>
+
+
+     <!-- MAKE AN APPOINTMENT -->
+     <section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <img src="images/Untitled design.png" class="img-responsive" alt="">
+                    </div>
+
+                    <form accept-charset='UTF-8'
+                    
+
+                    <div class="col-md-6 col-sm-6">
+                         <!-- CONTACT FORM HERE -->
+                         <form id="appointment-form" role="form" method="post">
+
+                              <!-- SECTION TITLE -->
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                   <h2>Make an appointment</h2>
+                              </div>
+
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="email-address">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="date">Select Date</label>
+                                        <input type="date" name="date" value="" class="form-control">
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label for="select">Select Department</label>
+                                        <select class="form-control">
+                                             <option>General Health</option>
+                                             <option>Cardiology</option>
+                                             <option>Dental</option>
+                                             <option>Medical Research</option>
+                                        </select>
+                                   </div>
+
+                                   <div class="col-md-12 col-sm-12">
+                                        <label for="telephone">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
+                                        <label for="Message">Additional Message</label>
+                                        <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
+                                        <button class="form-control" id="cf-submit" >Submit Button</button>
+                                   </div>
+                              </div>
+                        </form>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- GOOGLE MAP -->
+     <section id="google-map">
+     <!-- How to change your own map point
+            1. Go to Google Maps
+            2. Click on your location point
+            3. Click "Share" and choose "Embed map" tab
+            4. Copy only URL and paste it within the src="" field below
+	-->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d100.5641230193719!3d13.757206847615207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf51ce6427b7918fc!2sG+Tower!5e0!3m2!1sen!2sth!4v1510722015945" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+     </section>           
+
+
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb"> 
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
+                              <p>
+                                   feel free or for any emergency reach us below on our 24/7 contact line.
+                              </p>
+
+                              <div class="contact-info">
+                                   <p><i class="fa fa-phone"></i> 07016943939</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="mailto:dlucky171@gmail.com">support@gmail.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4"> 
+                         <div class="footer-thumb"> 
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Latest News</h4>
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="images/footer.jpg" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Amazing Technology</h5></a>
+                                        <span>March 08, 2024</span>
+                                   </div>
+                              </div>
+
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="images/footer.jpg" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>New Healing Process</h5></a>
+                                        <span>February 20, 2024</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4"> 
+                         <div class="footer-thumb">
+                              <div class="opening-hours">
+                                   <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
+                                   <p>Monday - Saturday <span>06:00 AM - 10:00 PM</span></p>
+                                   <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
+                                   <p>Sunday <span>Closed</span></p>
+                              </div> 
+
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text"> 
+                                   <p> &copy; 
+                                        <script>
+                                             document.write(new Date().getFullYear())
+                                        </script>
+                                        All right Reserved 
+                                   
+                              </p>
+                              </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                              <div class="footer-link"> 
+                                   <a href="#">Laboratory Tests</a>
+                                   <a href="#">Departments</a>
+                                   <a href="#">Insurance Policy</a>
+                                   <a href="#">Careers</a>
+                              </div>
+                         </div>
+                         <div class="col-md-2 col-sm-2 text-align-center">
+                              <div class="angle-up-btn"> 
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>   
+                    </div>
+                    
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     <script src="js/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.sticky.js"></script>
+     <script src="js/jquery.stellar.min.js"></script>
+     <script src="js/wow.min.js"></script>
+     <script src="js/smoothscroll.js"></script>
+     <script src="js/owl.carousel.min.js"></script>
+     <script src="js/custom.js"></script>
+
+</body>
+</html>

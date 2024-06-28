@@ -1,0 +1,21 @@
+*{
+    font-family: poppins;
+}
+
+/* .title-container {
+  display: inline-block; 
+  width: 700px; 
+  text-align: center;
+
+} */
+
+
+@media(max-width: 351px){
+    #title{
+      font-size: 1.75rem ; 
+      line-height: 1.75rem ;
+    }
+
+ 
+ 
+  }

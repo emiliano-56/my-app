@@ -43,7 +43,7 @@ app.get('/index.html', ensureAuthenticated, (req, res) => {
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
-    if (email === 'dlucky171@gmail.com' && password === '123') {
+    if (email === 'dlucky171@gmail.com' && password === 'dcode') {
         req.session.isAuthenticated = true;
         res.json({ success: true });
     } else {
@@ -88,7 +88,8 @@ app.post('/generate', ensureAuthenticated, (req, res) => {
 
         // Additional folders to copy
         fse.copySync(path.join(templateDir, 'fonts'), path.join(outputDir, 'fonts'));
-        // fse.copySync(path.join(templateDir, 'scss'), path.join(outputDir, 'scss'));
+        fse.copySync(path.join(templateDir, 'scss'), path.join(outputDir, 'scss'));
+        fse.copySync(path.join(templateDir, 'scss'), path.join(outputDir, 'vendors'));
         // fse.copySync(path.join(templateDir, 'libs'), path.join(outputDir, 'libs'));
         // Write the HTML file
         const outputPath = path.join(outputDir, 'index.html');
@@ -164,7 +165,7 @@ app.post('/publish', ensureAuthenticated, (req, res) => {
 
 app.post('/logout', (req, res) => {
     req.session.isAuthenticated = false;
-    res.json({ message: 'Logout successful' });
+    res.json({ message: 'oops!, logging out, byeee!...thanks for using me!. It was really a nice one generating templates for you.' });
 });
 
 app.get('/download-zip', ensureAuthenticated, (req, res) => {

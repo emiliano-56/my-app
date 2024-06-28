@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{logo_url}}">
+  <title>{{business_name}}</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+<!-- Header -->
+<header class="bg-gray-900 shadow-lg">
+    <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <img src="{{logo_url}}" width="{{logo_width}}" alt="">
+      <!-- <h1 class="text-3xl font-bold text-white">{{business_name}}</h1> -->
+      <div class="flex items-center space-x-6 md:hidden">
+        <!-- Hamburger Menu Button -->
+        <button id="menuBtn" class="text-gray-300 hover:text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="#services" class="text-gray-300 hover:text-white transition duration-300">Services</a>
+        <a href="#cases" class="text-gray-300 hover:text-white transition duration-300">Cases Solved</a>
+        <a href="#testimonials" class="text-gray-300 hover:text-white transition duration-300">Testimonials</a>
+        <a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Contact</a>
+      </nav>
+      <!-- Report Case Button -->
+      <button id="reportCaseBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg focus:outline-none hidden md:block">Report Case</button>
+    </div>
+  
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobileMenu" class="md:hidden fixed inset-0 bg-gray-900 bg-opacity-50 z-50 hidden">
+      <div class="flex justify-end p-4">
+        <button id="closeMenuBtn" class="text-gray-300 hover:text-white focus:outline-none">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col items-center">
+        <a href="#services" class="text-gray-300 hover:text-white transition duration-300 py-2">Services</a>
+        <a href="#cases" class="text-gray-300 hover:text-white transition duration-300 py-2">Cases Solved</a>
+        <a href="#testimonials" class="text-gray-300 hover:text-white transition duration-300 py-2">Testimonials</a>
+        <a href="#contact" class="text-gray-300 hover:text-white transition duration-300 py-2">Contact</a>
+          <!-- Report Case Button -->
+      <button id="reportCaseBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg focus:outline-none  md:block hidden">Report Case</button>
+      </div>
+    </div>
+  </header>
+  
+
+<!-- Modal -->
+<div id="reportCaseModal" class="fixed inset-0 z-50 flex items-center justify-center hidden">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="bg-white p-8 rounded-lg z-50">
+      <h2 class="text-2xl font-bold mb-4">Report a Case</h2>
+      <form>
+        <label for="caseTitle" class="block text-gray-700 font-bold mb-2">Case Title</label>
+        <input type="text" id="caseTitle" name="caseTitle" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 mb-4">
+  
+        <label for="caseDescription" class="block text-gray-700 font-bold mb-2">Case Description</label>
+        <textarea id="caseDescription" name="caseDescription" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 mb-4"></textarea>
+  
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg focus:outline-none">Submit</button>
+      </form>
+      <button id="closeModalBtn" class="absolute top-0 right-0 mt-4 mr-4 text-gray-600 hover:text-gray-900 focus:outline-none">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- Hero Section -->
+  <section class="bg-cover bg-center h-screen" style="background-image: url('https://cdn.pixabay.com/photo/2022/10/22/07/04/gavel-7538564_960_720.jpg');">
+    <div class="container mx-auto h-full flex items-center justify-center text-center text-white">
+      <div>
+        <h2 class="text-4xl md:text-6xl font-bold">Experienced & Reliable Legal Services</h2>
+        <p class="mt-4 text-xl md:text-2xl">We provide top-notch legal solutions for your needs</p>
+        <a href="#contact" class="mt-8 inline-block bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+<!-- Services Section -->
+<section id="services" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
+          <svg class="w-12 h-12 mx-auto text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89-7.88a2.006 2.006 0 012.83 0L21.36 8H19a2 2 0 00-2 2v10a2 2 0 002 2h2v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1h2a2 2 0 002-2V10a2 2 0 00-2-2H3z"></path></svg>
+          <h3 class="text-2xl font-bold mb-4">Family Law</h3>
+          <p class="text-gray-600">Expert legal support for divorce, child custody, and more.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
+          <svg class="w-12 h-12 mx-auto text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18v-3a6 6 0 0112 0v3M5 21h14"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a4 4 0 01-8 0V7a4 4 0 018 0z"></path></svg>
+          <h3 class="text-2xl font-bold mb-4">Criminal Law</h3>
+          <p class="text-gray-600">Defense against criminal charges with experienced representation.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
+          <svg class="w-12 h-12 mx-auto text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8V4m0 0L8.5 8.5M12 4l3.5 4.5M19 21v-5M5 21v-5M15 12h-6m6 0h-6m6 0H9m6 0v6M9 12v6"></path></svg>
+          <h3 class="text-2xl font-bold mb-4">Corporate Law</h3>
+          <p class="text-gray-600">Legal solutions for businesses, from startups to corporations.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
+          <svg class="w-12 h-12 mx-auto text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l2-2m0 0l2 2m-2-2v6M7 10h10M7 10l5 5L17 10"></path></svg>
+          <h3 class="text-2xl font-bold mb-4">Civil Rights Law</h3>
+          <p class="text-gray-600">Protection and advocacy for civil rights and liberties.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
+          <svg class="w-12 h-12 mx-auto text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 17l4 4 4-4m-4-2v6M8 4v16M12 8v6"></path></svg>
+          <h3 class="text-2xl font-bold mb-4">Immigration Law</h3>
+          <p class="text-gray-600">Assistance with visas, green cards, and citizenship.</p>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow text-center">
+          <svg class="w-12 h-12 mx-auto text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 21V7a2 2 0 012-2h8a2 2 0 012 2v14"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 12h4m-2 2v4"></path></svg>
+          <h3 class="text-2xl font-bold mb-4">Personal Injury Law</h3>
+          <p class="text-gray-600">Representation for injury claims to get the compensation you deserve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- Cases Solved Section -->
+<section id="cases" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Cases Solved</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <img class="w-full h-48 object-cover rounded-t-lg" src="https://cdn.pixabay.com/photo/2015/08/26/16/18/breakup-908714_960_720.jpg" alt="Case Image 1">
+          <div class="p-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">Divorce Settlement</h3>
+            <p class="text-gray-600 mb-4">Successfully negotiated a fair and equitable divorce settlement for both parties.</p>
+            <div class="text-3xl font-bold text-green-600" id="case-count-1">0</div>
+          </div>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <img class="w-full h-48 object-cover rounded-t-lg" src="https://cdn.pixabay.com/photo/2015/07/10/19/41/defense-attorney-840062_960_720.jpg" alt="Case Image 2">
+          <div class="p-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">Criminal Defense</h3>
+            <p class="text-gray-600 mb-4">Defended a client in a high-stakes criminal case, resulting in a not guilty verdict.</p>
+            <div class="text-3xl font-bold text-green-600" id="case-count-2">0</div>
+          </div>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-lg shadow">
+          <img class="w-full h-48 object-cover rounded-t-lg" src="https://cdn.pixabay.com/photo/2018/09/25/09/17/sale-3701777_1280.jpg" alt="Case Image 3">
+          <div class="p-4 text-center">
+            <h3 class="text-2xl font-bold mb-4">Property Dispute</h3>
+            <p class="text-gray-600 mb-4">Resolved a complex property dispute, securing the rightful ownership for our client.</p>
+            <div class="text-3xl font-bold text-green-600" id="case-count-3">0</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">Total Cases Solved</h3>
+        <div class="text-4xl md:text-5xl font-bold text-blue-600" id="total-cases-solved-count">0</div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // JavaScript countdown for individual case counts and total cases solved
+    document.addEventListener('DOMContentLoaded', function () {
+      const caseCounts = [150, 200, 250]; // Change these to the actual numbers of cases solved
+      const totalTargetCount = caseCounts.reduce((a, b) => a + b, 0);
+  
+      caseCounts.forEach((targetCount, index) => {
+        let count = 0;
+        const caseCountElement = document.getElementById(`case-count-${index + 1}`);
+        const interval = setInterval(() => {
+          if (count < targetCount) {
+            count++;
+            caseCountElement.textContent = count;
+          } else {
+            clearInterval(interval);
+          }
+        }, 50); // Adjust speed as necessary
+      });
+  
+      let totalCount = 0;
+      const totalCountElement = document.getElementById('total-cases-solved-count');
+      const totalInterval = setInterval(() => {
+        if (totalCount < totalTargetCount) {
+          totalCount++;
+          totalCountElement.textContent = totalCount;
+        } else {
+          clearInterval(totalInterval);
+        }
+      }, 10); // Adjust speed as necessary
+    });
+  </script>
+  
+<!-- Clients Testimonials Section -->
+<section id="testimonials" class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">What Our Clients Say</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="Client 1" class="w-12 h-12 object-cover rounded-full mr-4">
+            <div>
+              <h3 class="text-lg font-bold">Jane Doe</h3>
+              <p class="text-gray-600">Divorce Settlement Client</p>
+            </div>
+          </div>
+          <p class="text-gray-700 leading-relaxed">
+            "I am incredibly grateful to the legal team for their dedication and expertise
+             in handling my divorce settlement. They guided me through 
+            every step with compassion and ensured a fair resolution."
+            </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Client 2" class="w-12 h-12 object-cover rounded-full mr-4">
+            <div>
+              <h3 class="text-lg font-bold">John Smith</h3>
+              <p class="text-gray-600">Criminal Defense Client</p>
+            </div>
+          </div>
+          <p class="text-gray-700 leading-relaxed">
+            "Facing serious criminal charges was daunting, but thanks to their skillful defense, 
+            I received a not guilty verdict. Their strategic 
+            approach and unwavering support made all the difference."
+            </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="Client 3" class="w-12 h-12 object-cover rounded-full mr-4">
+            <div>
+              <h3 class="text-lg font-bold">Emily Johnson</h3>
+              <p class="text-gray-600">Property Dispute Client</p>
+            </div>
+          </div>
+          <p class="text-gray-700 leading-relaxed">
+            "The team resolved my property dispute efficiently and effectively. 
+            They navigated complex legal issues with precision, 
+            securing a favorable outcome. I highly recommend their services."
+            </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- About Us Section -->
+<section id="about" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 md:pr-8">
+          <img id="image" src="https://cdn.pixabay.com/photo/2012/04/11/16/41/lawyer-28838_1280.png" alt="Law Firm Image" class="w-full rounded-lg shadow-lg ">
+        </div>
+        <br><br>
+        <div class="md:w-1/2">
+          <div class="mt-8 md:mt-0" id="top-img">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">About {{business_name}}</h2>
+            <p class="text-gray-700 leading-relaxed">
+                {{business_name}} is dedicated to providing exceptional legal services across family law,
+                 criminal defense, personal injury, estate planning, and business law. With a focus on integrity
+                 and client advocacy, we deliver tailored legal solutions to achieve 
+                favorable outcomes for our clients.
+                </p>
+            <p class="text-gray-700 leading-relaxed mt-4">We specialize in providing expert legal services in areas such as divorce, criminal defense, property disputes, corporate law, civil rights, immigration, and personal injury. Our dedicated team of lawyers is committed to achieving the best possible outcomes for our clients.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Contact Us</h2>
+      <form class="max-w-lg mx-auto bg-gray-100 p-6 rounded-lg shadow">
+        <div class="mb-4">
+          <label class="block text-gray-600 mb-2" for="name">Name</label>
+          <input class="w-full p-3 border rounded" type="text" id="name" name="name" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-600 mb-2" for="email">Email</label>
+          <input class="w-full p-3 border rounded" type="email" id="email" name="email" required>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-600 mb-2" for="message">Message</label>
+          <textarea class="w-full p-3 border rounded" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 px-6 rounded-full hover:bg-blue-700">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+
+<!-- Report Case Form Section for Mobile (Visible on <=768px) -->
+<section id="reportSection" class="md:hidden bg-gray-100 py-8 px-4 text-center">
+    <h2 class="text-2xl font-bold text-gray-800 mb-4">Report a Case</h2>
+    <form id="reportForm" class="max-w-md mx-auto">
+      <div class="mb-4">
+        <label for="caseType" class="block text-gray-700 font-bold mb-2">Case Type</label>
+        <select id="caseType" name="caseType" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+          <option value="">Select Case Type</option>
+          <option value="divorce">Divorce</option>
+          <option value="criminal">Criminal Cases</option>
+          <option value="property">Property</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+  
+      <div class="mb-4">
+        <label for="caseTitleMobile" class="block text-gray-700 font-bold mb-2">Case Title</label>
+        <input type="text" id="caseTitleMobile" name="caseTitleMobile" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required>
+      </div>
+  
+      <div class="mb-4">
+        <label for="caseDescriptionMobile" class="block text-gray-700 font-bold mb-2">Case Description</label>
+        <textarea id="caseDescriptionMobile" name="caseDescriptionMobile" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500" required></textarea>
+      </div>
+  
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg focus:outline-none">Submit</button>
+    </form>
+  </section>
+  
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt text-gray-400 mr-2"></i> 123 Main Street, Cityville, State, Zip Code</p>
+          <p><i class="fas fa-phone-alt text-gray-400 mr-2"></i> +1 (123) 7016943939</p>
+          <p><i class="fas fa-envelope text-gray-400 mr-2"></i> support@gmail.com</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-4">Opening Hours</h3>
+          <p><strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM</p>
+          <p><strong>Saturday:</strong> 10:00 AM - 2:00 PM</p>
+          <p><strong>Sunday:</strong> Closed</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-gray-500">
+        <p>&copy; 
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            {{business_name}}. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  
+
+<script src="js/main.js"></script>
+<script src="js/script2.js"></script>
+<script src="js/script3.js"></script>
+
+</body>
+
+</html>

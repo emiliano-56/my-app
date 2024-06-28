@@ -10,7 +10,7 @@ document.getElementById('logoutButton').addEventListener('click', function(event
     .then(response => response.text())
     .then(data => {
         alert(data);
-        if (data === 'Logout successful') {
+        if (data === 'oops!, logging out, byeee!, see you again and hey, thanks for using me!.') {
             window.location.href = '/login.html';
         }
     })
