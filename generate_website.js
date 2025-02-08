@@ -43,7 +43,7 @@ app.get('/index.html', ensureAuthenticated, (req, res) => {
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
 
-    if (email === 'dlucky171@gmail.com' && password === 'dcode') {
+    if (email === 'swebs@gmail.com' && password === '123') {
         req.session.isAuthenticated = true;
         res.json({ success: true });
     } else {
